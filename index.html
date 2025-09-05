@@ -381,6 +381,73 @@
       color: var(--primary-dark);
     }
 
+    /* Quick Links Section */
+    .quick-links {
+      padding: 60px 2rem;
+      background: white;
+    }
+
+    .quick-links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .quick-link-card {
+      background: var(--background-cream);
+      padding: 2rem;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 30px var(--shadow);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(226, 135, 67, 0.1);
+      text-decoration: none;
+      color: var(--text-dark);
+      display: block;
+    }
+
+    .quick-link-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 50px var(--shadow-hover);
+      background: white;
+    }
+
+    .quick-link-icon {
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 1.5rem;
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      color: white;
+    }
+
+    .quick-link-card h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--secondary-color);
+    }
+
+    .quick-link-card p {
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .quick-link-arrow {
+      color: var(--primary-color);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
     /* Footer */
     footer {
       background-color: var(--secondary-color);
@@ -433,16 +500,19 @@
 
       .features,
       .screenshots-section,
-      .about {
+      .about,
+      .quick-links {
         padding: 60px 1rem;
       }
 
-      .features-grid {
+      .features-grid,
+      .quick-links-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
       }
 
-      .feature-card {
+      .feature-card,
+      .quick-link-card {
         padding: 2rem;
       }
 
@@ -471,6 +541,7 @@
       }
 
       .feature-card,
+      .quick-link-card,
       .developer-info {
         padding: 1.5rem;
       }
@@ -516,6 +587,7 @@
         <li><a href="#features">Features</a></li>
         <li><a href="#screenshots">Screenshots</a></li>
         <li><a href="#about">Über mich</a></li>
+        <li><a href="support.html">Support</a></li>
       </ul>
       <button class="mobile-menu">
         <i class="fas fa-bars"></i>
@@ -624,6 +696,51 @@
     </div>
   </section>
 
+  <!-- Quick Links Section -->
+  <section class="quick-links">
+    <div class="container">
+      <div class="section-title fade-in">
+        <h2>Weitere Informationen</h2>
+        <p>Erfahren Sie mehr über GoRecipe und erhalten Sie Unterstützung</p>
+      </div>
+
+      <div class="quick-links-grid">
+        <a href="about.html" class="quick-link-card fade-in">
+          <div class="quick-link-icon">
+            <i class="fas fa-info-circle"></i>
+          </div>
+          <h3>Über GoRecipe</h3>
+          <p>Erfahren Sie mehr über die App, das Entwicklungsteam und die Vision hinter GoRecipe.</p>
+          <div class="quick-link-arrow">
+            Mehr erfahren <i class="fas fa-arrow-right"></i>
+          </div>
+        </a>
+
+        <a href="support.html" class="quick-link-card fade-in">
+          <div class="quick-link-icon">
+            <i class="fas fa-life-ring"></i>
+          </div>
+          <h3>Hilfe & Support</h3>
+          <p>Häufige Fragen, Fehlerbehebung und direkter Kontakt zu unserem Support-Team.</p>
+          <div class="quick-link-arrow">
+            Support erhalten <i class="fas fa-arrow-right"></i>
+          </div>
+        </a>
+
+        <a href="privacy.html" class="quick-link-card fade-in">
+          <div class="quick-link-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>Datenschutz</h3>
+          <p>Informationen darüber, wie wir Ihre Daten sammeln, verwenden und schützen.</p>
+          <div class="quick-link-arrow">
+            Datenschutz lesen <i class="fas fa-arrow-right"></i>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- About Section -->
   <section id="about" class="about">
     <div class="container">
@@ -655,9 +772,9 @@
   <footer>
     <div class="footer-content">
       <div class="footer-links">
-        <a href="#privacy">Datenschutz</a>
-        <a href="#terms">AGB</a>
-        <a href="#support">Support</a>
+        <a href="about.html">Über GoRecipe</a>
+        <a href="privacy.html">Datenschutz</a>
+        <a href="support.html">Support</a>
         <a href="mailto:gorecipe@proton.me">Kontakt</a>
       </div>
       <p>&copy; 2025 GoRecipe. Alle Rechte vorbehalten. | Entwickelt mit ❤️ in Deutschland</p>
