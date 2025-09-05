@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datenschutz – GoRecipe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary-color: #e28743;
+      --primary-light: rgb(251, 144, 98);
+      --primary-dark: #e55a2b;
+      --secondary-color: #2c3e50;
+      --accent-color: #f39c12;
+      --text-dark: #2c3e50;
+      --text-light: #7f8c8d;
+      --background-light: #fefefe;
+      --background-cream: #fdf8f3;
+      --shadow: rgba(0, 0, 0, 0.1);
+      --shadow-hover: rgba(0, 0, 0, 0.15);
+      --border-color: #e9ecef;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.7;
+      color: var(--text-dark);
+      background-color: var(--background-cream);
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      padding: 1rem 0;
+      box-shadow: 0 2px 20px var(--shadow);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+
+    .back-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-dark);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .back-btn:hover {
+      color: var(--primary-color);
+    }
+
+    /* Header */
+    .header {
+      background: white;
+      padding: 120px 2rem 40px;
+      text-align: center;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--secondary-color);
+      margin-bottom: 1rem;
+    }
+
+    .last-updated {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      font-style: italic;
+    }
+
+    /* Content */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .section {
+      background: white;
+      margin-bottom: 2rem;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 15px var(--shadow);
+      border: 1px solid rgba(226, 135, 67, 0.1);
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--secondary-color);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .subsection-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin: 1.5rem 0 0.8rem 0;
+    }
+
+    .description {
+      color: var(--text-light);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .description ul {
+      margin: 1rem 0;
+      padding-left: 1.5rem;
+    }
+
+    .description li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Contact Button */
+    .contact-button {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.5rem;
+      background: var(--background-cream);
+      border-radius: 12px;
+      margin-top: 1rem;
+      text-decoration: none;
+      color: var(--text-dark);
+      border: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+    }
+
+    .contact-button:hover {
+      background: var(--primary-color);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(226, 135, 67, 0.3);
+    }
+
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.2rem;
+    }
+
+    .contact-button:hover .contact-icon {
+      background: white;
+      color: var(--primary-color);
+    }
+
+    .contact-text h3 {
+      font-weight: 500;
+      margin-bottom: 0.2rem;
+    }
+
+    .contact-text p {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      margin: 0;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--secondary-color);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary-color);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-container {
+        padding: 0 1rem;
+      }
+
+      .header {
+        padding: 100px 1rem 30px;
+      }
+
+      .header h1 {
+        font-size: 2rem;
+      }
+
+      .container {
+        padding: 1rem;
+      }
+
+      .section {
+        padding: 1.5rem;
+      }
+
+      .contact-button {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+      }
+
+      .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+
+    /* Scroll animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="back-btn">
+        <i class="fas fa-arrow-left"></i>
+        Zurück zur Hauptseite
+      </a>
+      <a href="index.html" class="logo">
+        <i class="fas fa-utensils"></i> GoRecipe
+      </a>
+      <div></div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <section class="header">
+    <h1><i class="fas fa-shield-alt"></i> Datenschutzerklärung</h1>
+    <p class="last-updated">Letzte Aktualisierung: Dezember 2024</p>
+  </section>
+
+  <!-- Content -->
+  <div class="container">
+    <!-- Introduction -->
+    <div class="section fade-in">
+      <h2 class="section-title">
+        <i class="fas fa-info-circle"></i>
+        Datenschutzerklärung
+      </h2>
+      <p class="description">
+        Bei GoRecipe nehmen wir Ihren Datenschutz ernst. Diese Datenschutzerklärung erklärt,
+        wie wir Ihre personenbezogenen Daten sammeln, verwenden und schützen, wenn Sie
+        unsere mobile Anwendung nutzen.
+      </p>
+    </div>
+
+    <!-- Information We Collect -->
+    <div class="section fade-in">
+      <h2 class="section-title">
+        <i class="fas fa-database"></i>
+        Welche Informationen sammeln wir
+      </h2>
+
+      <h3 class="subsection-title">Persönliche Informationen</h3>
+      <div class="description">
+        <ul>
+          <li>Profil-Informationen (Name, E-Mail-Adresse)</li>
+          <li>Von Ihnen erstellte oder gespeicherte Rezeptdaten</li>
+          <li>App-Einstellungen und Präferenzen</li>
+        </ul>
+      </div>
+
+      <h3 class="subsection-title">Nutzungsdaten</h3>
+      <div class="description">
+        <ul>
+          <li>App-Nutzungsmuster und verwendete Features</li>
+          <li>Leistungsdaten und Absturzberichte</li>
+          <li>Suchanfragen und Interaktionen</li>
+          <li>In der App verbrachte Zeit</li>
+        </ul>
+      </div>
+
+      <h3 class="subsection-title">Technische Daten</h3>
+      <div class="description">
+        <ul>
+          <li>Gerätetyp, Betriebssystemversion</li>
+          <li>App-Version und Einstellungen</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- How We Use Your Information -->
+    <div class="section fade-in">
+      <h2 class="section-title">
+        <i class="fas fa-cogs"></i>
+        Wie verwenden wir Ihre Informationen
+      </h2>
+      <div class="description">
+        Wir verwenden die gesammelten Informationen um:
+        <ul>
+          <li>Den GoRecipe-Service bereitzustellen und zu warten</li>
+          <li>Die App-Funktionalität und Benutzererfahrung zu verbessern</li>
+          <li>Wichtige Benachrichtigungen über den Service zu senden</li>
+          <li>Kundensupport zu bieten</li>
+          <li>Nutzungsmuster zu analysieren, um Features zu verbessern</li>
+          <li>App-Sicherheit zu gewährleisten und Missbrauch zu verhindern</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Data Storage -->
+    <div class="section fade-in">
+      <h2 class="section-title">
+        <i class="fas fa-server"></i>
+        Datenspeicherung
+      </h2>
+
+      <h3 class="subsection-title">Lokale Speicherung</h3>
+      <div class="description">
+        Die meisten Ihrer Daten werden lokal auf Ihrem Gerät gespeichert, einschließlich:
+        <ul>
+          <li>Ihre erstellten Rezepte</li>
+          <li>Favorisierte Rezepte</li>
+          <li>App-Einstellungen und Präferenzen</li>
+          <li>Bilder und Daten</li>
+          <li>Profil-Informationen</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Your Rights -->
+    <div class="section fade-in">
+      <h2 class="section-title">
+        <i class="fas fa-user-shield"></i>
+        Ihre Datenschutzrechte
+      </h2>
+      <div class="description">
+        Sie haben das Recht auf:
+        <ul>
+          <li>Zugang zu Ihren personenbezogenen Daten</li>
+          <li>Korrektur ungenauer Informationen</li>
+          <li>Löschung Ihres Kontos und Ihrer Daten</li>
+          <li>Export Ihrer Rezeptdaten</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Data Sharing -->
+    <div class="section fade-in">
+      <h2 class="section-title">
+        <i class="fas fa-share-alt"></i>
+        Datenweitergabe
+      </h2>
+      <div class="description">
+        Wir verkaufen, handeln oder vermieten Ihre personenbezogenen Daten nicht an Dritte.
+        Wir können Daten nur unter folgenden Umständen teilen:
+        <ul>
+          <li>Mit Ihrer ausdrücklichen Zustimmung</li>
+          <li>Zur Einhaltung gesetzlicher Verpflichtungen</li>
+          <li>Zum Schutz unserer Rechte und Sicherheit</li>
+          <li>Mit Dienstanbietern, die beim Betrieb der App helfen (unter strengen Vertraulichkeitsvereinbarungen)</li>
+          <li>Im Falle einer Geschäftsübertragung oder Fusion</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Third-Party Services -->
+    <div class="section fade-in">
+      <h2 class="section-title">
+        <i class="fas fa-puzzle-piece"></i>
+        Drittanbieter-Services
+      </h2>
+      <div class="description">
+        GoRecipe kann mit Drittanbieter-Services integriert sein:
+        <ul>
+          <li>Analyse-Services (nur anonymisierte Daten)</li>
+          <li>Authentifizierungs-Services</li>
+          <li>Absturzbericht-Tools</li>
+        </ul>
+        <p>Diese Services haben ihre eigenen Datenschutzrichtlinien, und wir empfehlen Ihnen, diese zu lesen.</p>
+      </div>
+    </div>
+
+    <!-- Children's Privacy -->
+    <div class="section fade-in">
+      <h2 class="section-title">
+        <i class="fas fa-child"></i>
+        Kinderdatenschutz
+      </h2>
+      <div class="description">
+        GoRecipe ist nicht für Kinder unter 13 Jahren bestimmt. Wir sammeln wissentlich
+        keine personenbezogenen Daten von Kindern unter 13 Jahren. Wenn Sie erfahren,
+        dass ein Kind uns personenbezogene Daten zur Verfügung gestellt hat,
+        kontaktieren Sie uns bitte umgehend.
+      </div>
+    </div>
+
+    <!-- Changes to Policy -->
+    <div class="section fade-in">
+      <h2 class="section-title">
+        <i class="fas fa-edit"></i>
+        Änderungen an dieser Richtlinie
+      </h2>
+      <div class="description">
+        Wir können diese Datenschutzerklärung von Zeit zu Zeit aktualisieren.
+        Wir werden Sie über wesentliche Änderungen informieren durch:
+        <ul>
+          <li>Veröffentlichung der neuen Richtlinie in der App</li>
+          <li>Senden einer Benachrichtigung</li>
+          <li>Aktualisierung des "Letzte Aktualisierung"-Datums</li>
+        </ul>
+        <p>Ihre weitere Nutzung der App nach Änderungen stellt die Annahme der neuen Richtlinie dar.</p>
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="section fade-in">
+      <h2 class="section-title">
+        <i class="fas fa-envelope"></i>
+        Kontaktieren Sie uns
+      </h2>
+      <div class="description">
+        Wenn Sie Fragen zu dieser Datenschutzerklärung oder unseren Datenpraktiken haben,
+        kontaktieren Sie uns bitte:
+      </div>
+
+      <a href="mailto:gorecipe@proton.me" class="contact-button">
+        <div class="contact-icon">
+          <i class="fas fa-envelope"></i>
+        </div>
+        <div class="contact-text">
+          <h3>E-Mail an uns</h3>
+          <p>gorecipe@proton.me</p>
+        </div>
+        <i class="fas fa-external-link-alt"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="index.html">Start</a>
+        <a href="about.html">Über uns</a>
+        <a href="support.html">Support</a>
+        <a href="mailto:gorecipe@proton.me">Kontakt</a>
+      </div>
+      <p>&copy; 2025 GoRecipe. Alle Rechte vorbehalten. | Entwickelt mit ❤️ in Deutschland</p>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll Animation
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const offsetTop = target.offsetTop - 80;
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
