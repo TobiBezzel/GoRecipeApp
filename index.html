@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GoRecipe – Ihre Rezept-App</title>
+  <title>GoRecipe – Your Recipe App</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <style>
@@ -35,7 +35,6 @@
       overflow-x: hidden;
     }
 
-    /* Navigation */
     nav {
       position: fixed;
       top: 0;
@@ -108,7 +107,6 @@
       color: var(--text-dark);
     }
 
-    /* Hero Section */
     .hero {
       background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
       color: white;
@@ -156,52 +154,6 @@
       font-weight: 300;
     }
 
-    .cta-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-      margin-top: 2rem;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 1rem 2rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: all 0.3s ease;
-      border: none;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background: white;
-      color: var(--primary-color);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: white;
-      border: 2px solid rgba(255, 255, 255, 0.8);
-    }
-
-    .btn-secondary:hover {
-      background: white;
-      color: var(--primary-color);
-      border-color: white;
-    }
-
-    /* Features Section */
     .features {
       padding: 80px 2rem;
       background-color: var(--background-cream);
@@ -278,7 +230,6 @@
       line-height: 1.6;
     }
 
-    /* Screenshots Section */
     .screenshots-section {
       padding: 80px 2rem;
       background: white;
@@ -316,19 +267,6 @@
       border-radius: 25px;
     }
 
-    .screenshot-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.1) 100%);
-      z-index: 1;
-      border-radius: 25px;
-    }
-
-    /* About Section */
     .about {
       padding: 80px 2rem;
       background-color: var(--background-cream);
@@ -381,7 +319,6 @@
       color: var(--primary-dark);
     }
 
-    /* Quick Links Section */
     .quick-links {
       padding: 60px 2rem;
       background: white;
@@ -448,7 +385,6 @@
       gap: 0.5rem;
     }
 
-    /* Footer */
     footer {
       background-color: var(--secondary-color);
       color: white;
@@ -479,7 +415,6 @@
       color: var(--primary-color);
     }
 
-    /* Responsive Design */
     @media (max-width: 768px) {
       .nav-links {
         display: none;
@@ -493,27 +428,13 @@
         padding: 100px 1rem 60px;
       }
 
-      .cta-buttons {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .features,
-      .screenshots-section,
-      .about,
-      .quick-links {
+      .features, .screenshots-section, .about, .quick-links {
         padding: 60px 1rem;
       }
 
-      .features-grid,
-      .quick-links-grid {
+      .features-grid, .quick-links-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
-      }
-
-      .feature-card,
-      .quick-link-card {
-        padding: 2rem;
       }
 
       .screenshots-grid {
@@ -525,29 +446,8 @@
         flex-direction: column;
         gap: 1rem;
       }
-
-      .developer-info {
-        padding: 1.5rem;
-      }
     }
 
-    @media (max-width: 480px) {
-      .hero {
-        padding: 80px 1rem 40px;
-      }
-
-      .nav-container {
-        padding: 0 1rem;
-      }
-
-      .feature-card,
-      .quick-link-card,
-      .developer-info {
-        padding: 1.5rem;
-      }
-    }
-
-    /* Scroll animations */
     .fade-in {
       opacity: 0;
       transform: translateY(30px);
@@ -558,35 +458,19 @@
       opacity: 1;
       transform: translateY(0);
     }
-
-    /* Loading animation */
-    .loading {
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      border: 3px solid rgba(255, 255, 255, 0.3);
-      border-radius: 50%;
-      border-top-color: white;
-      animation: spin 1s ease-in-out infinite;
-    }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
   </style>
 </head>
 <body>
-  <!-- Navigation -->
   <nav id="navbar">
     <div class="nav-container">
       <div class="logo">
         <i class="fas fa-utensils"></i> GoRecipe
       </div>
       <ul class="nav-links">
-        <li><a href="#home">Start</a></li>
+        <li><a href="#home">Home</a></li>
         <li><a href="#features">Features</a></li>
         <li><a href="#screenshots">Screenshots</a></li>
-        <li><a href="#about">Über mich</a></li>
+        <li><a href="#about">About</a></li>
         <li><a href="support.html">Support</a></li>
       </ul>
       <button class="mobile-menu">
@@ -595,31 +479,18 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
   <section id="home" class="hero">
     <div class="hero-content">
       <h1>GoRecipe</h1>
-      <p>Entdecken, kochen und teilen Sie Ihre leckersten Rezepte direkt auf Ihrem Smartphone!</p>
-
-      <!-- <div class="cta-buttons">
-        <a href="#" class="btn btn-primary">
-          <i class="fab fa-google-play"></i>
-          Google Play
-        </a>
-        <a href="#" class="btn btn-secondary">
-          <i class="fab fa-apple"></i>
-          App Store
-        </a>
-      </div> -->
+      <p>Discover, cook, and share your favorite recipes right from your smartphone!</p>
     </div>
   </section>
 
-  <!-- Features Section -->
   <section id="features" class="features">
     <div class="container">
       <div class="section-title fade-in">
-        <h2>Warum GoRecipe?</h2>
-        <p>Eine vollständige Lösung für alle Ihre kulinarischen Bedürfnisse</p>
+        <h2>Why GoRecipe?</h2>
+        <p>A complete solution for all your culinary needs</p>
       </div>
 
       <div class="features-grid">
@@ -627,81 +498,82 @@
           <div class="feature-icon">
             <i class="fas fa-search"></i>
           </div>
-          <h3>Rezepte Entdecken</h3>
-          <p>Durchsuchen Sie tausende von Rezepten und finden Sie neue Lieblingsgerichte für jeden Anlass und Geschmack.</p>
+          <h3>Discover Recipes</h3>
+          <p>Browse thousands of recipes and find new favorite dishes for every occasion and taste.</p>
         </div>
 
         <div class="feature-card fade-in">
           <div class="feature-icon">
             <i class="fas fa-plus-circle"></i>
           </div>
-          <h3>Eigene Rezepte Erstellen</h3>
-          <p>Erstellen und speichern Sie Ihre eigenen Rezepte mit Fotos, Zutaten und detaillierten Zubereitungsschritten.</p>
+          <h3>Create Your Own</h3>
+          <p>Create and save your own recipes with photos, ingredients, and detailed preparation steps.</p>
         </div>
 
         <div class="feature-card fade-in">
           <div class="feature-icon">
             <i class="fas fa-heart"></i>
           </div>
-          <h3>Favoriten Speichern</h3>
-          <p>Sammeln Sie Ihre Lieblingsrezepte in personalisierten Listen und haben Sie sie immer griffbereit.</p>
+          <h3>Save Favorites</h3>
+          <p>Collect your favorite recipes in personalized lists and have them always at hand.</p>
         </div>
 
         <div class="feature-card fade-in">
           <div class="feature-icon">
             <i class="fas fa-share-alt"></i>
           </div>
-          <h3>Rezepte Teilen</h3>
-          <p>Teilen Sie Ihre kulinarischen Kreationen mit Freunden und Familie oder entdecken Sie deren Geheimrezepte.</p>
+          <h3>Share Recipes</h3>
+          <p>Share your culinary creations with friends and family or discover their secret recipes.</p>
         </div>
 
         <div class="feature-card fade-in">
           <div class="feature-icon">
             <i class="fas fa-code"></i>
           </div>
-          <h3>Datenbackup</h3>
-          <p>Sichern sie ihre Rezepte in einer externen Datei.</p>
+          <h3>Data Backup</h3>
+          <p>Back up your recipes to an external file for safekeeping.</p>
         </div>
 
         <div class="feature-card fade-in">
           <div class="feature-icon">
             <i class="fas fa-mobile-alt"></i>
           </div>
-          <h3>Offline Verfügbar</h3>
-          <p>Zugriff auf Ihre gespeicherten Rezepte auch ohne Internetverbindung - perfekt für die Küche.</p>
+          <h3>Available Offline</h3>
+          <p>Access your saved recipes even without an internet connection - perfect for the kitchen.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Screenshots Section -->
   <section id="screenshots" class="screenshots-section">
     <div class="container">
       <div class="section-title fade-in">
-        <h2>Blick in die App</h2>
-        <p>Erleben Sie die intuitive Benutzeroberfläche von GoRecipe</p>
+        <h2>App Preview</h2>
+        <p>Experience GoRecipe's intuitive user interface</p>
       </div>
 
       <div class="screenshots-grid">
         <div class="screenshot-card fade-in">
-          <img src="./images/WhatsApp Image 2025-08-23 at 02.41.24.jpeg" alt="GoRecipe App Screenshot - Hauptmenü" loading="lazy">
+          <img src="./images/home.jpeg" alt="GoRecipe App Screenshot - Main Menu" loading="lazy">
         </div>
         <div class="screenshot-card fade-in">
-          <img src="./images/WhatsApp Image 2025-08-23 at 02.50.00.jpeg" alt="GoRecipe App Screenshot - Rezeptdetails" loading="lazy">
+          <img src="./images/recipe-detail.jpeg" alt="GoRecipe App Screenshot - Recipe Details" loading="lazy">
         </div>
         <div class="screenshot-card fade-in">
-          <img src="./images/WhatsApp Image 2025-08-23 at 02.50.00 (1).jpeg" alt="GoRecipe App Screenshot - Rezeptliste" loading="lazy">
+          <img src="./images/favourites.jpeg" alt="GoRecipe App Screenshot - Recipe List" loading="lazy">
+        </div>
+        <div class="screenshot-card fade-in">
+          <img src="./images/add.jpeg" alt="GoRecipe App Screenshot - Add Recipe" loading="lazy">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Quick Links Section -->
   <section class="quick-links">
     <div class="container">
       <div class="section-title fade-in">
-        <h2>Weitere Informationen</h2>
-        <p>Erfahren Sie mehr über GoRecipe und erhalten Sie Unterstützung</p>
+        <h2>More Information</h2>
+        <p>Learn more about GoRecipe and get support</p>
       </div>
 
       <div class="quick-links-grid">
@@ -709,10 +581,10 @@
           <div class="quick-link-icon">
             <i class="fas fa-info-circle"></i>
           </div>
-          <h3>Über GoRecipe</h3>
-          <p>Erfahren Sie mehr über die App, das Entwicklungsteam und die Vision hinter GoRecipe.</p>
+          <h3>About GoRecipe</h3>
+          <p>Learn more about the app, the development team, and the vision behind GoRecipe.</p>
           <div class="quick-link-arrow">
-            Mehr erfahren <i class="fas fa-arrow-right"></i>
+            Learn more <i class="fas fa-arrow-right"></i>
           </div>
         </a>
 
@@ -720,10 +592,10 @@
           <div class="quick-link-icon">
             <i class="fas fa-life-ring"></i>
           </div>
-          <h3>Hilfe & Support</h3>
-          <p>Häufige Fragen, Fehlerbehebung und direkter Kontakt zu unserem Support-Team.</p>
+          <h3>Help & Support</h3>
+          <p>Frequently asked questions, troubleshooting, and direct contact with our support team.</p>
           <div class="quick-link-arrow">
-            Support erhalten <i class="fas fa-arrow-right"></i>
+            Get support <i class="fas fa-arrow-right"></i>
           </div>
         </a>
 
@@ -731,58 +603,55 @@
           <div class="quick-link-icon">
             <i class="fas fa-shield-alt"></i>
           </div>
-          <h3>Datenschutz</h3>
-          <p>Informationen darüber, wie wir Ihre Daten sammeln, verwenden und schützen.</p>
+          <h3>Privacy Policy</h3>
+          <p>Information about how we collect, use, and protect your data.</p>
           <div class="quick-link-arrow">
-            Datenschutz lesen <i class="fas fa-arrow-right"></i>
+            Read privacy <i class="fas fa-arrow-right"></i>
           </div>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- About Section -->
   <section id="about" class="about">
     <div class="container">
       <div class="about-content fade-in">
         <div class="section-title">
-          <h2>Über den Entwickler</h2>
+          <h2>About the Developer</h2>
         </div>
 
-        <p>GoRecipe wurde mit Leidenschaft für gutes Essen und moderne Technologie entwickelt. Die App hilft Ihnen dabei, Ihre Lieblingsrezepte zu organisieren, neue kulinarische Inspirationen zu finden und Ihre eigenen Kreationen zu teilen.</p>
+        <p>GoRecipe was developed with a passion for good food and modern technology. The app helps you organize your favorite recipes, find new culinary inspiration, and share your own creations.</p>
 
-        <p>Perfekt für Hobbyköche, Foodie-Enthusiasten und alle, die ihre kulinarische Reise digital organisieren möchten.</p>
+        <p>Perfect for home cooks, foodie enthusiasts, and anyone who wants to digitally organize their culinary journey.</p>
 
         <div class="developer-info">
-          <h3><i class="fas fa-code"></i> Entwickelt von</h3>
+          <h3><i class="fas fa-code"></i> Developed by</h3>
           <div class="contact-info">
             <p><strong>Tobias Weihing</strong></p>
             <a href="mailto:gorecipe@proton.me">
               <i class="fas fa-envelope"></i>
               gorecipe@proton.me
             </a>
-            <p><i class="fas fa-map-marker-alt"></i> Deutschland</p>
+            <p><i class="fas fa-map-marker-alt"></i> Germany</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="footer-content">
       <div class="footer-links">
-        <a href="about.html">Über GoRecipe</a>
-        <a href="privacy.html">Datenschutz</a>
+        <a href="about.html">About GoRecipe</a>
+        <a href="privacy.html">Privacy Policy</a>
         <a href="support.html">Support</a>
-        <a href="mailto:gorecipe@proton.me">Kontakt</a>
+        <a href="mailto:gorecipe@proton.me">Contact</a>
       </div>
-      <p>&copy; 2025 GoRecipe. Alle Rechte vorbehalten. | Entwickelt mit ❤️ in Deutschland</p>
+      <p>&copy; 2025 GoRecipe. All rights reserved. | Developed with ❤️ in Germany</p>
     </div>
   </footer>
 
   <script>
-    // Scroll Animation
     const observerOptions = {
       threshold: 0.1,
       rootMargin: '0px 0px -50px 0px'
@@ -800,71 +669,33 @@
       observer.observe(el);
     });
 
-    // Navbar scroll effect
     const navbar = document.getElementById('navbar');
-    let lastScrollTop = 0;
-
     window.addEventListener('scroll', () => {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
       if (scrollTop > 100) {
         navbar.classList.add('scrolled');
       } else {
         navbar.classList.remove('scrolled');
       }
-
-      lastScrollTop = scrollTop;
     });
 
-    // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-          const offsetTop = target.offsetTop - 80;
           window.scrollTo({
-            top: offsetTop,
+            top: target.offsetTop - 80,
             behavior: 'smooth'
           });
         }
       });
     });
 
-    // Mobile menu functionality (basic implementation)
     const mobileMenuBtn = document.querySelector('.mobile-menu');
     const navLinks = document.querySelector('.nav-links');
-
     mobileMenuBtn.addEventListener('click', () => {
       navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-    });
-
-    // Image lazy loading fallback
-    const images = document.querySelectorAll('img[loading="lazy"]');
-    images.forEach(img => {
-      img.addEventListener('load', () => {
-        img.style.opacity = '1';
-      });
-
-      img.addEventListener('error', () => {
-        img.style.display = 'none';
-        console.log('Bild konnte nicht geladen werden:', img.src);
-      });
-    });
-
-    // Add loading animation to buttons
-    document.querySelectorAll('.btn-primary, .btn-secondary').forEach(btn => {
-      btn.addEventListener('click', function(e) {
-        if (this.href === '#' || this.href.includes('#')) {
-          e.preventDefault();
-          const originalText = this.innerHTML;
-          this.innerHTML = '<span class="loading"></span> Wird geladen...';
-
-          setTimeout(() => {
-            this.innerHTML = originalText;
-          }, 2000);
-        }
-      });
     });
   </script>
 </body>
