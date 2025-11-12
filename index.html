@@ -197,7 +197,7 @@
       text-align: center;
       box-shadow: 0 10px 30px var(--shadow);
       transition: all 0.3s ease;
-      border: 1px solid rgba(255, 107, 53, 0.1);
+      border: 1px solid rgba(226, 135, 67, 0.1);
     }
 
     .feature-card:hover {
@@ -253,7 +253,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 0; /* keine unnötigen Ränder */
+      padding: 0;
     }
 
     .screenshot-card:hover {
@@ -266,23 +266,6 @@
       height: auto;
       border-radius: 15px;
       object-fit: contain;
-    }
-
-    .about {
-      padding: 80px 2rem;
-      background-color: var(--background-cream);
-    }
-
-    .about-content {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .about-content p {
-      font-size: 1.1rem;
-      color: var(--text-light);
-      margin-bottom: 2rem;
     }
 
     .developer-info {
@@ -323,6 +306,7 @@
     .quick-links {
       padding: 60px 2rem;
       background: white;
+      margin-bottom: 10rem;
     }
 
     .quick-links-grid {
@@ -471,7 +455,7 @@
         <li><a href="#home">Home</a></li>
         <li><a href="#features">Features</a></li>
         <li><a href="#screenshots">Screenshots</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="#more">More</a></li>
         <li><a href="support.html">Support</a></li>
       </ul>
       <button class="mobile-menu">
@@ -497,10 +481,10 @@
       <div class="features-grid">
         <div class="feature-card fade-in">
           <div class="feature-icon">
-            <i class="fas fa-search"></i>
+            <i class="fas fa-database"></i>
           </div>
-          <h3>Discover Recipes</h3>
-          <p>Browse thousands of recipes and find new favorite dishes for every occasion and taste.</p>
+          <h3>Manage Recipes</h3>
+          <p>Keep all your recipes organized – edit, sort, and access them anytime with powerful filters.</p>
         </div>
 
         <div class="feature-card fade-in">
@@ -563,14 +547,11 @@
         <div class="screenshot-card fade-in">
           <img src="./images/favourites.jpeg" alt="GoRecipe App Screenshot - Recipe List" loading="lazy">
         </div>
-        <!-- <div class="screenshot-card fade-in">
-          <img src="./images/add.jpeg" alt="GoRecipe App Screenshot - Add Recipe" loading="lazy">
-        </div> -->
       </div>
     </div>
   </section>
 
-  <section class="quick-links">
+  <section id="more" class="quick-links">
     <div class="container">
       <div class="section-title fade-in">
         <h2>More Information</h2>
@@ -614,41 +595,16 @@
     </div>
   </section>
 
-  <section id="about" class="about">
-    <div class="container">
-      <div class="about-content fade-in">
-        <div class="section-title">
-          <h2>About the Developer</h2>
-        </div>
-
-        <p>GoRecipe was developed with a passion for good food and modern technology. The app helps you organize your favorite recipes, find new culinary inspiration, and share your own creations.</p>
-
-        <p>Perfect for home cooks, foodie enthusiasts, and anyone who wants to digitally organize their culinary journey.</p>
-
-        <div class="developer-info">
-          <h3><i class="fas fa-code"></i> Developed by</h3>
-          <div class="contact-info">
-            <p><strong>Tobias Weihing</strong></p>
-            <a href="mailto:gorecipe@proton.me">
-              <i class="fas fa-envelope"></i>
-              gorecipe@proton.me
-            </a>
-            <p><i class="fas fa-map-marker-alt"></i> Germany</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <footer>
     <div class="footer-content">
       <div class="footer-links">
-        <a href="about.html">About GoRecipe</a>
-        <a href="privacy.html">Privacy Policy</a>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
         <a href="support.html">Support</a>
-        <a href="mailto:gorecipe@proton.me">Contact</a>
+        <a href="imprint.html">Legal Notice</a>
+        <a href="privacy.html">Privacy Policy</a>
       </div>
-      <p>&copy; 2025 GoRecipe. All rights reserved. | Developed with ❤️ in Germany</p>
+      <p>&copy; 2025 GoRecipe. All rights reserved.</p>
     </div>
   </footer>
 

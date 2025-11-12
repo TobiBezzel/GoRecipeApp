@@ -7,6 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <style>
+    /* (same styles as before, unchanged) */
     * {
       margin: 0;
       padding: 0;
@@ -16,15 +17,11 @@
     :root {
       --primary-color: #e28743;
       --primary-light: rgb(251, 144, 98);
-      --primary-dark: #e55a2b;
       --secondary-color: #2c3e50;
-      --accent-color: #f39c12;
       --text-dark: #2c3e50;
       --text-light: #7f8c8d;
-      --background-light: #fefefe;
       --background-cream: #fdf8f3;
       --shadow: rgba(0, 0, 0, 0.1);
-      --shadow-hover: rgba(0, 0, 0, 0.15);
       --border-color: #e9ecef;
     }
 
@@ -35,7 +32,6 @@
       background-color: var(--background-cream);
     }
 
-    /* Navigation */
     nav {
       position: fixed;
       top: 0;
@@ -77,7 +73,6 @@
       color: var(--primary-color);
     }
 
-    /* Header */
     .header {
       background: white;
       padding: 120px 2rem 40px;
@@ -98,9 +93,8 @@
       font-style: italic;
     }
 
-    /* Content */
     .container {
-      max-width: 800px;
+      max-width: 900px;
       margin: 0 auto;
       padding: 2rem;
     }
@@ -146,7 +140,22 @@
       margin-bottom: 0.5rem;
     }
 
-    /* Contact Button */
+    .description strong {
+      color: var(--text-dark);
+    }
+
+    .info-box {
+      background: #f0f8ff;
+      border-left: 4px solid var(--primary-color);
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+    }
+
+    .info-box strong {
+      color: var(--primary-color);
+    }
+
     .contact-button {
       display: flex;
       align-items: center;
@@ -196,7 +205,6 @@
       margin: 0;
     }
 
-    /* Footer */
     footer {
       background-color: var(--secondary-color);
       color: white;
@@ -228,7 +236,6 @@
       color: var(--primary-color);
     }
 
-    /* Responsive */
     @media (max-width: 768px) {
       .nav-container {
         padding: 0 1rem;
@@ -250,19 +257,12 @@
         padding: 1.5rem;
       }
 
-      .contact-button {
-        flex-direction: column;
-        text-align: center;
-        gap: 0.5rem;
-      }
-
       .footer-links {
         flex-direction: column;
         gap: 1rem;
       }
     }
 
-    /* Scroll animations */
     .fade-in {
       opacity: 0;
       transform: translateY(20px);
@@ -276,12 +276,11 @@
   </style>
 </head>
 <body>
-  <!-- Navigation -->
   <nav>
     <div class="nav-container">
       <a href="index.html" class="back-btn">
         <i class="fas fa-arrow-left"></i>
-        Back to Home
+        Back
       </a>
       <a href="index.html" class="logo">
         <i class="fas fa-utensils"></i> GoRecipe
@@ -290,194 +289,285 @@
     </div>
   </nav>
 
-  <!-- Header -->
   <section class="header">
     <h1><i class="fas fa-shield-alt"></i> Privacy Policy</h1>
-    <p class="last-updated">Last Updated: November 2025</p>
+    <p class="last-updated">Last updated: November 12, 2025</p>
   </section>
 
-  <!-- Content -->
   <div class="container">
-    <!-- Introduction -->
+    <!-- 1. Controller -->
+    <div class="section fade-in">
+      <h2 class="section-title">
+        <i class="fas fa-user-tie"></i>
+        1. Controller
+      </h2>
+      <div class="description">
+        <p>The party responsible for data processing in accordance with the General Data Protection Regulation (GDPR) is:</p>
+        <div class="info-box">
+          <strong>Tobias Weihing</strong><br>
+          [Your full address]<br>
+          [ZIP City], Germany<br><br>
+          Email: gorecipe@proton.me<br>
+          Website: https://tobibezzel.github.io/GoRecipeApp/
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. General information -->
     <div class="section fade-in">
       <h2 class="section-title">
         <i class="fas fa-info-circle"></i>
-        Privacy Policy
+        2. General Information on Data Processing
       </h2>
-      <p class="description">
-        At GoRecipe, we take your privacy seriously. This Privacy Policy explains
-        how we collect, use, and protect your personal information when you use
-        our mobile application.
-      </p>
+      <div class="description">
+        <p>Protecting your personal data is important to us. We process your data exclusively based on the legal provisions (GDPR, TKG 2003).</p>
+        <p>This privacy policy informs you about the most important aspects of data processing within our app.</p>
+      </div>
     </div>
 
-    <!-- Information We Collect -->
+    <!-- 3. Legal basis -->
+    <div class="section fade-in">
+      <h2 class="section-title">
+        <i class="fas fa-balance-scale"></i>
+        3. Legal Basis for Processing
+      </h2>
+      <div class="description">
+        <p>We process your personal data based on the following legal bases:</p>
+        <ul>
+          <li><strong>Art. 6 (1) b GDPR</strong> – Contract performance: Providing and using app functions</li>
+          <li><strong>Art. 6 (1) a GDPR</strong> – Consent: When you have explicitly given consent (e.g., for marketing)</li>
+          <li><strong>Art. 6 (1) f GDPR</strong> – Legitimate interests: App improvement, troubleshooting, security</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 4. Data collected -->
     <div class="section fade-in">
       <h2 class="section-title">
         <i class="fas fa-database"></i>
-        Information We Collect
+        4. Data We Collect
       </h2>
 
-      <h3 class="subsection-title">Personal Information</h3>
+      <h3 class="subsection-title">4.1 Personal Data</h3>
       <div class="description">
         <ul>
-          <li>Profile information (name, email address)</li>
-          <li>Recipe data you create or save</li>
+          <li>Profile information (name, email address, phone number, location, bio)</li>
+          <li>Recipes you create or save</li>
           <li>App settings and preferences</li>
         </ul>
       </div>
 
-      <h3 class="subsection-title">Usage Data</h3>
+      <h3 class="subsection-title">4.2 Usage Data</h3>
       <div class="description">
         <ul>
-          <li>App usage patterns and features used</li>
-          <li>Performance data and crash reports</li>
+          <li>App usage patterns and used features</li>
+          <li>Performance and crash reports</li>
           <li>Search queries and interactions</li>
           <li>Time spent in the app</li>
         </ul>
       </div>
 
-      <h3 class="subsection-title">Technical Data</h3>
+      <h3 class="subsection-title">4.3 Technical Data</h3>
       <div class="description">
         <ul>
-          <li>Device type, operating system version</li>
-          <li>App version and settings</li>
+          <li>Device type and OS version</li>
+          <li>App version and configuration</li>
+          <li>Unique device identifiers (for analysis purposes)</li>
         </ul>
       </div>
     </div>
 
-    <!-- How We Use Your Information -->
+    <!-- 5. Purpose of processing -->
     <div class="section fade-in">
       <h2 class="section-title">
         <i class="fas fa-cogs"></i>
-        How We Use Your Information
+        5. Purpose of Data Processing
       </h2>
       <div class="description">
-        We use the collected information to:
+        <p>We use your data for the following purposes:</p>
         <ul>
-          <li>Provide and maintain the GoRecipe service</li>
-          <li>Improve app functionality and user experience</li>
-          <li>Send important service notifications</li>
-          <li>Provide customer support</li>
-          <li>Analyze usage patterns to improve features</li>
-          <li>Ensure app security and prevent abuse</li>
+          <li>Providing and maintaining GoRecipe services</li>
+          <li>Improving app functionality and user experience</li>
+          <li>Sending important service notifications</li>
+          <li>Providing customer support</li>
+          <li>Analyzing usage patterns to improve features</li>
+          <li>Ensuring app security and preventing misuse</li>
         </ul>
       </div>
     </div>
-
-    <!-- Data Storage -->
+    <!-- 6. Data storage and security -->
     <div class="section fade-in">
       <h2 class="section-title">
         <i class="fas fa-server"></i>
-        Data Storage
+        6. Data Storage and Security
       </h2>
 
-      <h3 class="subsection-title">Local Storage</h3>
+      <h3 class="subsection-title">6.1 Local Storage</h3>
       <div class="description">
-        Most of your data is stored locally on your device, including:
+        <p>Most of your data is stored locally on your device, including:</p>
         <ul>
           <li>Your created recipes</li>
-          <li>Favorited recipes</li>
+          <li>Favorite recipes</li>
           <li>App settings and preferences</li>
-          <li>Images and media</li>
+          <li>Images and related data</li>
           <li>Profile information</li>
         </ul>
       </div>
-    </div>
-
-    <!-- Your Rights -->
-    <div class="section fade-in">
-      <h2 class="section-title">
-        <i class="fas fa-user-shield"></i>
-        Your Privacy Rights
-      </h2>
+      <h3 class="subsection-title">6.2 Storage Duration</h3>
       <div class="description">
-        You have the right to:
+        <p>We store your personal data only as long as necessary for the fulfillment of purposes or as required by law.</p>
         <ul>
-          <li>Access your personal data</li>
-          <li>Correct inaccurate information</li>
-          <li>Delete your account and data</li>
-          <li>Export your recipe data</li>
+          <li><strong>User data:</strong> Until your account is deleted</li>
+          <li><strong>Technical logs:</strong> Up to 90 days</li>
+          <li><strong>Support requests:</strong> 3 years after completion</li>
         </ul>
+      </div>
+
+      <h3 class="subsection-title">6.3 Security Measures</h3>
+      <div class="description">
+        <p>We take appropriate technical and organizational measures to protect your data from loss, misuse, and unauthorized access.</p>
       </div>
     </div>
 
-    <!-- Data Sharing -->
+    <!-- 7. Data sharing -->
     <div class="section fade-in">
       <h2 class="section-title">
         <i class="fas fa-share-alt"></i>
-        Data Sharing
+        7. Disclosure of Data to Third Parties
       </h2>
       <div class="description">
-        We do not sell, trade, or rent your personal information to third parties.
-        We may only share data under the following circumstances:
+        <p>We do not sell, trade, or rent your personal data to third parties. Data may only be shared in the following cases:</p>
         <ul>
           <li>With your explicit consent</li>
           <li>To comply with legal obligations</li>
-          <li>To protect our rights and safety</li>
-          <li>With service providers who assist in operating the app (under strict confidentiality agreements)</li>
-          <li>In the event of a business transfer or merger</li>
+          <li>To protect our rights and ensure security</li>
+          <li>To service providers assisting in app operations (under strict confidentiality agreements)</li>
+          <li>In case of business transfer or merger</li>
         </ul>
       </div>
     </div>
 
-    <!-- Third-Party Services -->
+    <!-- 8. Third-party services -->
     <div class="section fade-in">
       <h2 class="section-title">
         <i class="fas fa-puzzle-piece"></i>
-        Third-Party Services
+        8. Third-Party Services
       </h2>
       <div class="description">
-        GoRecipe may integrate with third-party services:
+        <p>GoRecipe may integrate the following third-party services:</p>
         <ul>
-          <li>Analytics services (anonymized data only)</li>
-          <li>Authentication services</li>
-          <li>Crash reporting tools</li>
+          <li><strong>Analytics services:</strong> Only anonymized data</li>
+          <li><strong>Authentication services:</strong> For secure login</li>
+          <li><strong>Crash reporting tools:</strong> To improve app stability</li>
         </ul>
-        <p>These services have their own privacy policies, and we encourage you to review them.</p>
+        <p>These providers have their own privacy policies. We recommend reviewing them carefully.</p>
       </div>
     </div>
 
-    <!-- Children's Privacy -->
+    <!-- 9. Your rights -->
+    <div class="section fade-in">
+      <h2 class="section-title">
+        <i class="fas fa-user-shield"></i>
+        9. Your Rights (Art. 15–22 GDPR)
+      </h2>
+      <div class="description">
+        <p>You have the following rights regarding your personal data:</p>
+        <ul>
+          <li><strong>Right of access (Art. 15 GDPR):</strong> Obtain information about your stored data</li>
+          <li><strong>Right to rectification (Art. 16 GDPR):</strong> Correct inaccurate data</li>
+          <li><strong>Right to erasure (Art. 17 GDPR):</strong> Delete your data ("Right to be forgotten")</li>
+          <li><strong>Right to restriction (Art. 18 GDPR):</strong> Restrict processing of your data</li>
+          <li><strong>Right to data portability (Art. 20 GDPR):</strong> Export your recipe data</li>
+          <li><strong>Right to object (Art. 21 GDPR):</strong> Object to data processing</li>
+          <li><strong>Right to withdraw consent (Art. 7 (3) GDPR):</strong> Withdraw consent at any time</li>
+        </ul>
+        <p>To exercise these rights, please contact us at: <strong>gorecipe@proton.me</strong></p>
+      </div>
+    </div>
+
+    <!-- 10. Complaint rights -->
+    <div class="section fade-in">
+      <h2 class="section-title">
+        <i class="fas fa-exclamation-triangle"></i>
+        10. Right to Lodge a Complaint with Supervisory Authorities
+      </h2>
+      <div class="description">
+        <p>You have the right to lodge a complaint with a data protection authority about our processing of your personal data.</p>
+        <div class="info-box">
+          <strong>Supervisory Authority in Germany:</strong><br>
+          The State Data Protection Commissioner of your federal state<br>
+          or the Federal Commissioner for Data Protection and Freedom of Information<br>
+          Website: <a href="https://www.bfdi.bund.de" target="_blank" style="color: var(--primary-color);">www.bfdi.bund.de</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 11. Automated decision-making -->
+    <div class="section fade-in">
+      <h2 class="section-title">
+        <i class="fas fa-robot"></i>
+        11. Automated Decision-Making / Profiling
+      </h2>
+      <div class="description">
+        <p>We <strong>do not</strong> use automated decision-making or profiling within the meaning of Art. 22 GDPR.</p>
+      </div>
+    </div>
+
+    <!-- 12. Third country transfer -->
+    <div class="section fade-in">
+      <h2 class="section-title">
+        <i class="fas fa-globe"></i>
+        12. Transfers to Third Countries
+      </h2>
+      <div class="description">
+        <p>Your data is <strong>not</strong> transferred to countries outside the EU/EEA unless:</p>
+        <ul>
+          <li>You have explicitly consented (Art. 49 (1) a GDPR)</li>
+          <li>The transfer is necessary for contract performance</li>
+          <li>Adequate safeguards are in place (e.g., EU Standard Contractual Clauses)</li>
+        </ul>
+        <p>If we use services in the future that transfer data to third countries, we will inform you accordingly.</p>
+      </div>
+    </div>
+
+    <!-- 13. Children -->
     <div class="section fade-in">
       <h2 class="section-title">
         <i class="fas fa-child"></i>
-        Children's Privacy
+        13. Privacy for Children
       </h2>
       <div class="description">
-        GoRecipe is not intended for children under 13 years of age. We do not knowingly
-        collect personal information from children under 13. If you learn that a child
-        has provided us with personal information, please contact us immediately.
+        <p>GoRecipe is not intended for children under the age of 16. We do not knowingly collect personal data from children under 16 years of age.</p>
+        <p>If you discover that a child under 16 has provided us with personal data, please contact us immediately.</p>
       </div>
     </div>
 
-    <!-- Changes to Policy -->
+    <!-- 14. Changes to this policy -->
     <div class="section fade-in">
       <h2 class="section-title">
         <i class="fas fa-edit"></i>
-        Changes to This Policy
+        14. Changes to This Privacy Policy
       </h2>
       <div class="description">
-        We may update this Privacy Policy from time to time.
-        We will notify you of significant changes by:
+        <p>We reserve the right to amend this privacy policy from time to time to reflect changes in law or our services.</p>
+        <p>We will inform you about significant changes by:</p>
         <ul>
-          <li>Posting the new policy in the app</li>
+          <li>Publishing the new privacy policy in the app</li>
           <li>Sending a notification</li>
-          <li>Updating the "Last Updated" date</li>
+          <li>Updating the “Last updated” date</li>
         </ul>
-        <p>Your continued use of the app after changes constitutes acceptance of the new policy.</p>
+        <p>Your continued use of the app after changes constitutes your acceptance of the new policy.</p>
       </div>
     </div>
 
-    <!-- Contact -->
+    <!-- 15. Contact -->
     <div class="section fade-in">
       <h2 class="section-title">
         <i class="fas fa-envelope"></i>
-        Contact Us
+        15. Contact
       </h2>
       <div class="description">
-        If you have any questions about this Privacy Policy or our data practices,
-        please contact us:
+        <p>If you have any questions about this privacy policy or wish to exercise your rights, please contact us:</p>
       </div>
 
       <a href="mailto:gorecipe@proton.me" class="contact-button">
@@ -485,7 +575,7 @@
           <i class="fas fa-envelope"></i>
         </div>
         <div class="contact-text">
-          <h3>Email Us</h3>
+          <h3>Email</h3>
           <p>gorecipe@proton.me</p>
         </div>
         <i class="fas fa-external-link-alt"></i>
@@ -493,21 +583,20 @@
     </div>
   </div>
 
-  <!-- Footer -->
   <footer>
     <div class="footer-content">
       <div class="footer-links">
         <a href="index.html">Home</a>
-        <a href="about.html">About</a>
+        <a href="about.html">About Us</a>
         <a href="support.html">Support</a>
-        <a href="mailto:gorecipe@proton.me">Contact</a>
+        <a href="imprint.html">Legal Notice</a>
+        <a href="privacy.html">Privacy Policy</a>
       </div>
-      <p>&copy; 2025 GoRecipe. All rights reserved. | Built with ❤️ in Germany</p>
+      <p>&copy; 2025 GoRecipe. All rights reserved.</p>
     </div>
   </footer>
 
   <script>
-    // Scroll Animation
     const observerOptions = {
       threshold: 0.1,
       rootMargin: '0px 0px -50px 0px'
@@ -523,21 +612,6 @@
 
     document.querySelectorAll('.fade-in').forEach(el => {
       observer.observe(el);
-    });
-
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          const offsetTop = target.offsetTop - 80;
-          window.scrollTo({
-            top: offsetTop,
-            behavior: 'smooth'
-          });
-        }
-      });
     });
   </script>
 </body>
