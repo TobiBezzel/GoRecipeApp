@@ -44,6 +44,11 @@
       backdrop-filter: blur(10px);
       z-index: 1000;
       padding: 1rem 0;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 20px var(--shadow);
+    }
+
+    nav.scrolled {
       box-shadow: 0 2px 20px var(--shadow);
     }
 
@@ -60,21 +65,48 @@
       font-weight: 700;
       font-size: 1.5rem;
       color: var(--primary-color);
-      text-decoration: none;
     }
 
-    .back-btn {
+    .nav-links {
       display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--text-dark);
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .nav-links a {
       text-decoration: none;
+      color: var(--text-dark);
       font-weight: 500;
       transition: color 0.3s ease;
+      position: relative;
     }
 
-    .back-btn:hover {
+    .nav-links a:hover {
       color: var(--primary-color);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: var(--primary-color);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .mobile-menu {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--text-dark);
     }
 
     /* Header */
@@ -477,21 +509,26 @@
 </head>
 <body>
   <!-- Navigation -->
-  <nav>
+  <nav id="navbar">
     <div class="nav-container">
-      <a href="index.html" class="back-btn">
-        <i class="fas fa-arrow-left"></i>
-        Back to Home
-      </a>
-      <a href="index.html" class="logo">
+      <div class="logo">
         <i class="fas fa-utensils"></i> GoRecipe
-      </a>
-      <div></div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="imprint.html">Imprint</a></li>
+        <li><a href="support.html">Support</a></li>
+      </ul>
+      <button class="mobile-menu">
+        <i class="fas fa-bars"></i>
+      </button>
     </div>
   </nav>
 
   <!-- Header -->
-  <section class="header">
+  <section id="about" class="header">
     <div class="app-icon">
       <i class="fas fa-utensils"></i>
     </div>
