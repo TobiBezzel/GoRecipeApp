@@ -137,18 +137,18 @@
     }
 
     .app-icon {
-      width: 120px;
-      height: 120px;
-      margin: 0 auto 2rem;
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 25px;
       display: flex;
-      align-items: center;
       justify-content: center;
-      font-size: 4rem;
-      color: white;
-      position: relative;
-      z-index: 2;
+      margin-bottom: 20px;
+    }
+
+    .app-logo {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;         /* macht das Bild rund */
+      object-fit: cover;          /* schneidet das Bild sauber zu */
+      object-position: center;    /* zeigt den mittleren Bereich */
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* optional: leichter Schatten */
     }
 
     .header h1 {
@@ -453,8 +453,88 @@
       color: var(--primary-color);
     }
 
-    /* Responsive */
+    /* Mobile Navigation */
     @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 1rem 0;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        gap: 0;
+        z-index: 999;
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+      }
+
+      .nav-links.active {
+        display: flex !important;
+      }
+
+      .nav-links li {
+        width: 100%;
+        border-bottom: 1px solid #f0f0f0;
+      }
+
+      .nav-links li:last-child {
+        border-bottom: none;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 1rem 2rem;
+        width: 100%;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        background-color: var(--background-cream);
+        color: var(--primary-color);
+      }
+
+      .nav-links a::after {
+        display: none;
+      }
+
+      .mobile-menu {
+        display: block !important;
+        z-index: 1001;
+        padding: 0.5rem;
+        min-width: 44px;
+        min-height: 44px;
+      }
+
+      .mobile-menu i {
+        transition: transform 0.3s ease;
+      }
+
+      .mobile-menu.active i:before {
+        content: "\f00d";
+      }
+
+      body.menu-open {
+        overflow: hidden;
+      }
+
+      .nav-overlay {
+        display: none;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 998;
+      }
+
+      .nav-overlay.active {
+        display: block;
+      }
+
       .nav-container {
         padding: 0 1rem;
       }
@@ -530,12 +610,13 @@
   <!-- Header -->
   <section id="about" class="header">
     <div class="app-icon">
-      <i class="fas fa-utensils"></i>
+      <img src="./images/logo.png" alt="GoRecipe Logo" class="app-logo">
     </div>
     <h1>GoRecipe</h1>
     <p class="version">Version 1.0.0</p>
     <p class="tagline">Your personal recipe app for everyday use</p>
   </section>
+
 
   <!-- Content -->
   <div class="container">
@@ -631,7 +712,7 @@
         Get in Touch
       </h2>
       <div class="links-grid">
-        <a href="https://tobibezzel.github.io/GoRecipeApp/" class="link-item" target="_blank">
+        <!-- <a href="https://tobibezzel.github.io/GoRecipeApp/" class="link-item" target="_blank">
           <div class="link-left">
             <div class="link-icon">
               <i class="fas fa-globe"></i>
@@ -642,7 +723,7 @@
             </div>
           </div>
           <i class="fas fa-external-link-alt"></i>
-        </a>
+        </a> -->
 
         <a href="mailto:gorecipe@proton.me" class="link-item">
           <div class="link-left">
@@ -668,6 +749,60 @@
   </footer>
 
   <script>
+    // Mobile Menu
+    const mobileMenuBtn = document.querySelector('.mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+    const body = document.body;
+
+    // Create overlay element
+    const overlay = document.createElement('div');
+    overlay.className = 'nav-overlay';
+    document.body.appendChild(overlay);
+
+    // Toggle menu function
+    function toggleMenu() {
+      const isActive = navLinks.classList.contains('active');
+
+      if (isActive) {
+        navLinks.classList.remove('active');
+        mobileMenuBtn.classList.remove('active');
+        overlay.classList.remove('active');
+        body.classList.remove('menu-open');
+      } else {
+        navLinks.classList.add('active');
+        mobileMenuBtn.classList.add('active');
+        overlay.classList.add('active');
+        body.classList.add('menu-open');
+      }
+    }
+
+    // Button click handler
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', toggleMenu);
+    }
+
+    // Overlay click handler
+    overlay.addEventListener('click', toggleMenu);
+
+    // Close menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+          toggleMenu();
+        }
+      });
+    });
+
+    // Close menu on window resize
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        navLinks.classList.remove('active');
+        mobileMenuBtn.classList.remove('active');
+        overlay.classList.remove('active');
+        body.classList.remove('menu-open');
+      }
+    });
+
     // Scroll Animation
     const observerOptions = {
       threshold: 0.1,
