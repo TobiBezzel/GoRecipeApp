@@ -14,7 +14,7 @@
     }
 
     :root {
-      --primary-color: #e28743;
+      --primary-color: #F97316;
       --primary-light: rgb(251, 144, 98);
       --primary-dark: #e55a2b;
       --secondary-color: #2c3e50;
@@ -400,6 +400,43 @@
       color: var(--primary-color);
     }
 
+    .beta-cta {
+      margin-top: 2.5rem;
+      padding: 1.5rem 2rem;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+
+    .beta-cta:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .beta-cta p {
+      margin-bottom: 0.8rem;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    .beta-link {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.15rem;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+      padding-bottom: 2px;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .beta-link:hover {
+      border-bottom-color: white;
+      transform: scale(1.05);
+    }
+
     /* Mobile Navigation Fixes */
     @media (max-width: 768px) {
       .nav-links {
@@ -522,7 +559,7 @@
   <nav id="navbar">
     <div class="nav-container">
       <div class="logo">
-        <i class="fas fa-utensils"></i> GoRecipe
+        GoRecipe
       </div>
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
@@ -541,6 +578,11 @@
     <div class="hero-content">
       <h1>GoRecipe</h1>
       <p>Discover, cook, and share your favorite recipes right from your smartphone!</p>
+
+      <div class="beta-cta">
+        <p>🚀 Become a pre-release tester and test new features first!</p>
+        <a href="mailto:gorecipe@proton.me" class="beta-link">gorecipe@proton.me</a>
+      </div>
     </div>
   </section>
 
@@ -596,8 +638,8 @@
           <div class="feature-icon">
             <i class="fas fa-mobile-alt"></i>
           </div>
-          <h3>Available Offline</h3>
-          <p>Access your saved recipes even without an internet connection - perfect for the kitchen.</p>
+          <h3>Sync Across Devices</h3>
+          <p>Access your recipes anywhere and anytime.</p>
         </div>
       </div>
     </div>
@@ -612,13 +654,22 @@
 
       <div class="screenshots-grid">
         <div class="screenshot-card fade-in">
-          <img src="./images/home.jpeg" alt="GoRecipe App Screenshot - Main Menu" loading="lazy">
+          <img src="./images/home.png" alt="GoRecipe App Screenshot - Main Menu" loading="lazy">
         </div>
         <div class="screenshot-card fade-in">
-          <img src="./images/recipe-detail.jpeg" alt="GoRecipe App Screenshot - Recipe Details" loading="lazy">
+          <img src="./images/recipes.png" alt="GoRecipe App Screenshot - Recipe List" loading="lazy">
         </div>
         <div class="screenshot-card fade-in">
-          <img src="./images/favourites.jpeg" alt="GoRecipe App Screenshot - Recipe List" loading="lazy">
+          <img src="./images/detailed.png" alt="GoRecipe App Screenshot - Recipe Details" loading="lazy">
+        </div>
+        <div class="screenshot-card fade-in">
+          <img src="./images/edit.png" alt="GoRecipe App Screenshot - Recipe Details" loading="lazy">
+        </div>
+        <div class="screenshot-card fade-in">
+          <img src="./images/featured.png" alt="GoRecipe App Screenshot - Recipe Details" loading="lazy">
+        </div>
+        <div class="screenshot-card fade-in">
+          <img src="./images/settings.png" alt="GoRecipe App Screenshot - Recipe Details" loading="lazy">
         </div>
       </div>
     </div>
